@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.jdt.internal.compiler.lookup.SourceTypeCollisionException;
+
 public class HelloServlet extends HttpServlet {
 
 	@Override
@@ -21,5 +23,26 @@ public class HelloServlet extends HttpServlet {
         out.flush();
         out.close();
     }
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+		System.out.println("hello from post");
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		super.destroy();
+		System.out.println("destroy");
+	}
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+		System.out.println("init");
+	}
     
 }
