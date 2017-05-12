@@ -20,7 +20,7 @@ import com.example.services.NotificationService;
 public class KlasterController {
 
     @Autowired
- //   @Qualifier("spring")
+    @Qualifier("spring")
     private KlasterService klaserService;
     @Autowired
     private NotificationService notificationService;

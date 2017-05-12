@@ -30,6 +30,7 @@ import com.example.services.NotificationService;
 public class CdController {
 
     @Autowired
+    @Qualifier("spring")
     private KlasterService klaserService;
 
     @Autowired
@@ -71,11 +72,11 @@ public class CdController {
     }
 
     @RequestMapping(value = "/cds", params = { "save" }, method = RequestMethod.POST)
-    public String saveMoneta( Cd cd, BindingResult bindingResult, ModelMap model) {
+    public String saveMoneta(@Valid Cd cd, BindingResult bindingResult, ModelMap model) {
 
         if (bindingResult.hasErrors()) {
             notifyService.addErrorMessage("Please fill the form correctly!");
-            return "cds";
+            return "cd";
         }
         Optional<Cd> result = klaserService.edit(cd);
         if (result.isPresent())
@@ -87,7 +88,7 @@ public class CdController {
     }
 
     @RequestMapping(value = "/cds", params = { "create" }, method = RequestMethod.POST)
-    public String createMoneta(Cd cd, BindingResult bindingResult, ModelMap model) {
+    public String createMoneta(@Valid Cd cd, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
             notifyService.addErrorMessage("Please fill the form correctly!");
             return "cd";
@@ -107,7 +108,6 @@ public class CdController {
 
     @RequestMapping(value = "/cds/create", method = RequestMethod.GET)
     public String showMainPages(final Cd cd) {
-        // Ustawiamy date nowej monety, na dole strony do dodania
     	cd.setData(Calendar.getInstance().getTime());
         return "cd";
     }

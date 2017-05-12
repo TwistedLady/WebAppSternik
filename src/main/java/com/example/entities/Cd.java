@@ -5,18 +5,21 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 public class Cd {
-//  @NotNull
+  @NotNull
   @Id
 	private Long id;
 //	@NotNull
 	private String title;
 //	@NotNull
 	//@Size(min=3, max=30, message = "Band should be in the range [{min}...{max}]")
+	@Pattern(regexp="Motorhead", message="Must be motorhead")
 	private String band;
 //	@NotNull
 	private BigDecimal price;
