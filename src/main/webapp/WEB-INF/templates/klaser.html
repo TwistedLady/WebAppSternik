@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout ::site-head">
+<title>Klaster CD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all" href="../../css/klaser.css" th:href="@{/css/klaser.css}" />
+</head>
+
+<body>
+  <header th:replace="layout :: site-header" />
+  <div>
+    <h2 th:text="#{title.lista}" style="display: inline;">Lista cd</h2>
+  </div>
+  
+  <div class="listCd" th:unless="${#lists.isEmpty(cdAll)}">
+    <table>
+      <thead>
+        <tr>
+          <th th:text="#{klaser.id}">id</th>
+          <th th:text="#{klaser.title}">title</th>
+          <th th:text="#{klaster.band}">band</th>
+          <th th:text="#{klaser.price}">price</th>
+          <th th:text="#{klaser.description}">description</th>
+          <th th:text="#{klaser.status}">status</th>
+          <th th:text="#{klaser.data}">data</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="cd : ${cdAll}">
+          <form action="#" th:action="@{/cds}" th:object="${cd}" method="post">
+          <td th:text="${cd.id}">992</td>
+          <td th:text="${cd.title}">Symbolic</td>
+          <td th:text="${cd.band}">Death</td>
+          <td th:text="${cd.price}">25</td>
+          <td th:text="${{cd.description}}">Blabla</td>
+          <td th:text="${{cd.status}}">NOWA</td>
+         
+          <td>
+            <button type="submit" name="remove" th:value="${cd.id}" th:text="#{klaser.remove}">Dell</button>
+            
+            <a href="cd.html" th:href="@{|/cds/${cd.id}|}" ><button type="button" th:text="#{klaser.edit}">Edit</button></a>              
+          </td>
+          </form>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer th:replace="layout :: site-footer" />
+</body>
+</html>
