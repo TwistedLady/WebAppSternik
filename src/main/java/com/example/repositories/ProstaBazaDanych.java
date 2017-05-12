@@ -20,9 +20,9 @@ public class ProstaBazaDanych implements CdRepository{
 	
 	public ProstaBazaDanych() {
 			baza= new Cd[15];
-			Cd cd= new Cd(1l, "Inferno", "Motorhead", new BigDecimal(12), Status.NEW, "-",new Date());
+			Cd cd= new Cd(0l, "Inferno", "Motorhead", new BigDecimal(12), Status.NEW, "-",new Date());
 			baza[0]=cd;
-			Cd cd2= new Cd(1l, "Iron fist", "Motorhead", new BigDecimal(32), Status.NEW, "-",new Date());
+			Cd cd2= new Cd(1l, "Iron fist", "Motorhead", new BigDecimal(32), Status.FORSAE, "-",new Date());
 			baza[1]=cd2;
 	}
 
@@ -100,4 +100,14 @@ public class ProstaBazaDanych implements CdRepository{
 	            return false;
 	        return true;
 	    }
+	  @Override
+		public List<Cd> findToSell() {
+		  List<Cd> tmp = new ArrayList<>();
+	        for (int i = 0; i < baza.length; i++) {
+	            if (baza[i] != null)
+	            	if(baza[i].getStatus()==Status.FORSAE)
+	                tmp.add(baza[i]);
+	        }
+	        return tmp;			
+		}
 }

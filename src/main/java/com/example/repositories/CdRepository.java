@@ -10,4 +10,5 @@ public interface CdRepository {
 	Cd update(Cd cd) throws NoSuchCdException;
 	void delete(Long id) throws NoSuchCdException;
 	List<Cd> findAll();
+	List<Cd> findToSell();
 }

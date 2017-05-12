@@ -3,21 +3,25 @@ package com.example.entities;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-//@Entity
+@Entity
 @XmlRootElement
 public class Cd {
 //  @NotNull
-//  @Id
+  @Id
 	private Long id;
 //	@NotNull
 	private String title;
 //	@NotNull
+	//@Size(min=3, max=30, message = "Band should be in the range [{min}...{max}]")
 	private String band;
 //	@NotNull
 	private BigDecimal price;
-//	@Size(min=2, max=30, message = "{Size.moneta.opis}")
-//	@Size(min=2, max=30, message = "Opis should be in the range [{min}...{max}]")
+//	@Size(min=2, max=30, message = "{Size.moneta.opis}")\
+	@Size(min=2, max=30, message = "Opis should be in the range [{min}...{max}]")
 	private String description;
 //	@NotNull
 	private Status status;
@@ -34,6 +38,7 @@ public class Cd {
 		this.status = status;
 		this.description=description;
 		this.data=data;
+		final int a; a=4;
 	}
 
 	public static Cd produceCd(Long id,String title, String band, BigDecimal price, Status status,String description,Date data)

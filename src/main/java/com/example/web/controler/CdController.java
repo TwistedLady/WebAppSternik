@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -70,7 +71,7 @@ public class CdController {
     }
 
     @RequestMapping(value = "/cds", params = { "save" }, method = RequestMethod.POST)
-    public String saveMoneta(Cd cd, BindingResult bindingResult, ModelMap model) {
+    public String saveMoneta( Cd cd, BindingResult bindingResult, ModelMap model) {
 
         if (bindingResult.hasErrors()) {
             notifyService.addErrorMessage("Please fill the form correctly!");

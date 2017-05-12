@@ -16,8 +16,9 @@ body>header>a>img, body>header a {
 display: inline-block;
 vertical-align: middle;
 padding: 0px 5px;
-font-size: 1.2em;
+font-size: 1.2em;	
 }
+
 
 body>footer {
 background: #eee;
@@ -53,11 +54,12 @@ h2 {
 
 form fieldset {
   padding-top: 20px;
+  align : center;
 }
 
 form div {
-  float: left;
-  clear: left;
+  float: center;
+  clear: center;
   width: 100%;
   padding-bottom: 1em;
 }
@@ -113,6 +115,7 @@ form div.submit {
   padding-top: 5px;
   padding-bottom: 5px;
   border: 1px solid #000000;
+  color: red;
 }
 
 form div.submit button {
@@ -182,4 +185,17 @@ input[type=submit].link {
 	display: inline; 
 	color: blue; 
 	text-decoration: underline; 
+}
+a:link, a:visited {
+    
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: #d3d3d3 ;
 }

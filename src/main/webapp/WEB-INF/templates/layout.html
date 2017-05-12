@@ -7,15 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" media="all" href="../../css/klaser.css" th:href="@{/css/klaser.css}" />
 <link rel="icon" href="../../imgages/coins.ico" th:href="@{/images/coins.ico}" />
-</head>
+
 
 <body>
 
   <header th:fragment="site-header">
-    <a href="index.html" th:href="@{/}"><img src="../../images/klaser.jpg" th:src="@{/images/klaser.jpg}"/> </a> 
-    <a href="klaser.html" th:href="@{/cds}">Wszystkie cd</a>
-    <a href="tosell.html" th:href="@{/tosell}">Cd do sprzedania</a>
-    <a href="cd.html" th:href="@{/cds/create}">Dodaj cd</a>
+    <a role="button" href="index.html" th:href="@{/}" style=" display: block;"><img src="../../images/klaser.jpg" th:src="@{/images/klaser.jpg}"/> </a> 
+    <a role="button" href="klaser.html" th:href="@{/cds}">Wszystkie cd</a>
+    <a role="button" href="tosell.html" th:href="@{/tosell}">Cd do sprzedania</a>
+    <a role="button" href="cd.html" th:href="@{/cds/create}">Dodaj cd</a>
 
     <ul id="messages" th:with="notifyMessages=${session[T(com.example.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
       <li th:each="msg : ${notifyMessages}" th:text="${msg.text}"

@@ -20,23 +20,23 @@
         <tr>
           <th th:text="#{klaser.id}">id</th>
           <th th:text="#{klaser.title}">title</th>
-          <th th:text="#{klaster.band}">band</th>
+          <th th:text="#{klaser.band}">band</th>
           <th th:text="#{klaser.price}">price</th>
           <th th:text="#{klaser.description}">description</th>
           <th th:text="#{klaser.status}">status</th>
-          <th th:text="#{klaser.data}">data</th>
+          <th th:text="#{klaser.data}">operations</th>
           
         </tr>
       </thead>
       <tbody>
         <tr th:each="cd : ${cdAll}">
           <form action="#" th:action="@{/cds}" th:object="${cd}" method="post">
-          <td th:text="${cd.id}">992</td>
-          <td th:text="${cd.title}">Symbolic</td>
-          <td th:text="${cd.band}">Death</td>
-          <td th:text="${cd.price}">25</td>
-          <td th:text="${{cd.description}}">Blabla</td>
-          <td th:text="${{cd.status}}">NOWA</td>
+          <td th:text="${cd.id}"></td>
+          <td th:text="${cd.title}"></td>
+          <td th:text="${cd.band}"></td>
+          <td th:text="${cd.price}"></td>
+          <td th:text="${{cd.description}}"></td>
+          <td th:text="${{cd.status}}"></td>
          
           <td>
             <button type="submit" name="remove" th:value="${cd.id}" th:text="#{klaser.remove}">Dell</button>

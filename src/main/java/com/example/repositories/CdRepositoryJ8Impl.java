@@ -73,4 +73,15 @@ public class CdRepositoryJ8Impl implements CdRepository {
 		return this.cds;
 	}
 
+	@Override
+	public List<Cd> findToSell() {
+		List<Cd> returncds = new ArrayList<Cd>();
+		for(Cd cd : this.cds)
+		{
+			if(cd.getStatus()==Status.FORSAE)
+			returncds.add(cd);
+		}
+		return returncds;
+	}
+
 }

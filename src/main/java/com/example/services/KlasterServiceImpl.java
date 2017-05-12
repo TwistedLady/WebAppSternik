@@ -29,7 +29,7 @@ public class KlasterServiceImpl implements KlasterService{
 	@Override
 	public List<Cd> findAllToSell() {
 		// TODO Auto-generated method stub
-		return bazaDanych.findAll();
+		return bazaDanych.findToSell();
 	}
 
 	@Override
