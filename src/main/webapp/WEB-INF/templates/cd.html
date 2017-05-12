@@ -40,19 +40,11 @@
           <label for="band"> <span th:text="#{klaser.band}">waluta</span>
           </label> <input type="text" th:field="*{band}" th:errorclass="fieldError" />
         </div>
-<!--         <div> -->
-<!--           <label for="cenaNabycia"> <span th:text="#{klaser.cenaNabycia}">cenaNabycia</span> -->
-<!--           </label> <input type="text" th:field="*{cenaNabycia}" th:errorclass="fieldError" /> -->
-<!--         </div> -->
-<!--         <div> -->
-<!--           <label for="dataNabycia"> <span th:text="#{klaser.dataNabycia}">Date kup</span> (<span -->
-<!--             th:text="#{date.format}">YYYY/MM/DD</span>) -->
-<!--           </label> <input type="text" th:field="*{dataNabycia}" th:errorclass="fieldError" /> -->
-<!--         </div> -->
-<!--         <div> -->
-<!--           <label for="krajPochodzenia"> <span th:text="#{klaser.krajPochodzenia}">krajPochodzenia</span> -->
-<!--           </label> <input type="text" th:field="*{krajPochodzenia}" th:errorclass="fieldError" /> -->
-<!--         </div> -->
+
+        <div>
+          <label for="price"> <span th:text="#{klaser.price}">price</span>
+          </label> <input type="text" th:field="*{price}" th:errorclass="fieldError" />
+        </div>
         <div>
            <label for="status"> <span th:text="#{klaser.status}">status</span></label>
              <select th:field="*{status}" th:errorclass="fieldError">
