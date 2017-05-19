@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import sternik.fk.entities.Cd;
+import sternik.fk.entities.Status;
 import sternik.fk.repositories.springdata.CdsRepository;
 
 
@@ -34,8 +35,9 @@ public class KlaserServiceJPAImpl implements KlasterService {
     @Override
     public List<Cd> findAllToSell() {
         List<Cd> l = new ArrayList<>();
-        for (Cd item : bazaDanych.findAll()) {
-            l.add(item);
+        for (Cd item : bazaDanych.findByStatus(Status.FORSAE)) {
+         //   if(item.getStatus()==Status.FORSAE)
+        	l.add(item);
         }
         return l;
     }
