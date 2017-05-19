@@ -12,7 +12,7 @@
 
 	<servlet>
 		<servlet-name>hello</servlet-name>
-		<servlet-class>com.example.hello.HelloServlet</servlet-class>
+		<servlet-class>sternik.fk.hello.HelloServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

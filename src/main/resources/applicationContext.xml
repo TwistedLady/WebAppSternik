@@ -10,10 +10,10 @@
 	<context:annotation-config />
 
 	<!-- For defining Spring Bean -->
-	<context:component-scan base-package="com.example" />
+	<context:component-scan base-package="sternik.fk" />
 
 	<!-- For bootstrapping the Spring Repository -->
-	<jpa:repositories base-package="com.example.repositories.springdata" />
+	<jpa:repositories base-package="sternik.fk.repositories.springdata" />
 
 	<!-- Necessary to get the entity manager injected into the factory bean -->
 	<bean

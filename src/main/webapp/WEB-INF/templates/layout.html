@@ -17,7 +17,7 @@
     <a role="button" href="tosell.html" th:href="@{/tosell}">Cd do sprzedania</a>
     <a role="button" href="cd.html" th:href="@{/cds/create}">Dodaj cd</a>
 
-    <ul id="messages" th:with="notifyMessages=${session[T(com.example.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+    <ul id="messages" th:with="notifyMessages=${session[T(sternik.fk.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
       <li th:each="msg : ${notifyMessages}" th:text="${msg.text}"
            th:class="${#strings.toLowerCase(msg.type)}">
       </li>
